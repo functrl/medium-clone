@@ -21,7 +21,6 @@
 /client/.c9/
 /client/*.launch
 /client/.settings/
-/client/*.sublime-workspace
 
 # misc
 /client/.sass-cache
