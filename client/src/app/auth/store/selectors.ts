@@ -7,7 +7,8 @@ export const authFeatureSelector = createFeatureSelector<
   >('auth')
 
 export const isSubmittingSelector = createSelector(
-  authFeatureSelector, (authState) => authState.isSubmitting
+  authFeatureSelector,
+  (authState) => authState.isSubmitting
 )
 
 export const validationErrorsSelector = createSelector(
