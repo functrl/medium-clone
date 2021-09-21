@@ -5,7 +5,7 @@ import {registerAction} from '../../store/actions/register.action';
 import {Observable} from 'rxjs';
 import {isSubmittingSelector, validationErrorsSelector} from '../../store/selectors';
 import {RegisterRequestInterface} from '../../types/registerRequest.interface';
-import {BackendErrorsInterface} from '../../../shared/types/backendErrors.interface';
+import {BackendErrorsInterface} from '../../../shared/types/backend-errors.interface';
 
 @Component({
   selector: 'app-register',

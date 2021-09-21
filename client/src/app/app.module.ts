@@ -9,9 +9,11 @@ import {environment} from '../../../../cooking-recipes/client/src/environments/e
 import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {EffectsModule} from '@ngrx/effects';
-import {TopBarModule} from './shared/modules/topBar/topBar.module';
+import {TopBarModule} from './shared/modules/top-bar/top-bar.module';
 import {PersistenceService} from './shared/services/persistence.service';
 import {AuthInterceptor} from './shared/services/auth.interceptor';
+import {GlobalFeedModule} from './global-feed/global-feed.module';
+import {routerReducer, StoreRouterConnectingModule} from '@ngrx/router-store';
 
 @NgModule({
   declarations: [
@@ -22,14 +24,16 @@ import {AuthInterceptor} from './shared/services/auth.interceptor';
     AppRoutingModule,
     AuthModule,
     HttpClientModule,
-    StoreModule.forRoot({}),
+    StoreModule.forRoot({router: routerReducer}),
     EffectsModule.forRoot([]),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
       logOnly: environment.production,
       autoPause: true,
     }),
-    TopBarModule
+    StoreRouterConnectingModule.forRoot(),
+    TopBarModule,
+    GlobalFeedModule
   ],
   providers: [
     PersistenceService,

@@ -6,7 +6,7 @@ import {
   getCurrentUserAction,
   getCurrentUserFailureAction,
   getCurrentUserSuccessAction
-} from './actions/getCurrentUser.action';
+} from './actions/get-current-user.action';
 
 
 const initialState: AuthStateInterface = {

@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import {select, Store} from '@ngrx/store';
 import {Observable} from 'rxjs';
-import {CurrentUserInterface} from '../../../../types/currentUser.interface';
+import {CurrentUserInterface} from '../../../../types/current-user.interface';
 import {currentUserSelector, isAnonymousSelector, isLoggedInSelector} from '../../../../../auth/store/selectors';
 
 @Component({
   selector: 'app-top-bar',
-  templateUrl: './topBar.component.html',
-  styleUrls: ['./topBar.component.scss']
+  templateUrl: './top-bar.component.html',
+  styleUrls: ['./top-bar.component.scss']
 })
 export class TopBarComponent implements OnInit {
   isLoggedIn$: Observable<boolean>

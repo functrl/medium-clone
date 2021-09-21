@@ -7,12 +7,12 @@ import {StoreModule} from '@ngrx/store';
 import {reducers} from './store/reducers';
 import {EffectsModule} from '@ngrx/effects';
 import {RegisterEffect} from './store/effects/register.effect';
-import {BackendErrorMessagesModule} from '../shared/modules/backendErrorMessages/backendErrorMessages.module';
+import {BackendErrorMessagesModule} from '../shared/modules/backend-error-messages/backend-error-messages.module';
 import {PersistenceService} from '../shared/services/persistence.service';
 import {AuthService} from './services/auth.service';
 import { LoginComponent } from './components/login/login.component';
 import {LoginEffect} from './store/effects/login.effect';
-import {GetCurrentUserEffect} from './store/effects/getCurrentUser.effect';
+import {GetCurrentUserEffect} from './store/effects/get-current-user.effect';
 
 const routes: Routes = [
   {
