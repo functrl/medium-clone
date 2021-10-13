@@ -1,12 +1,15 @@
-import {Injectable} from '@angular/core';
-import {createEffect, Actions, ofType} from '@ngrx/effects';
-import {catchError, map, switchMap} from 'rxjs/operators';
-import {of} from 'rxjs';
-import {FeedService} from '../../services/feed.service';
-import {getFeedAction, getFeedFailureAction, getFeedSuccessAction} from '../actions/get-feed.action';
+import {Injectable} from '@angular/core'
+import {createEffect, Actions, ofType} from '@ngrx/effects'
+import {catchError, map, switchMap} from 'rxjs/operators'
+import {of} from 'rxjs'
+import {FeedService} from '../../services/feed.service'
+import {
+  getFeedAction,
+  getFeedFailureAction,
+  getFeedSuccessAction,
+} from '../actions/get-feed.action'
 
 @Injectable()
-
 export class GetFeedEffect {
   getFeed$ = createEffect(() =>
     this.actions$.pipe(
@@ -24,9 +27,5 @@ export class GetFeedEffect {
     )
   )
 
-  constructor(
-    private actions$: Actions,
-    private feedService: FeedService
-  ) {
-  }
+  constructor(private actions$: Actions, private feedService: FeedService) {}
 }

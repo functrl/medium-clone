@@ -1,16 +1,14 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core'
 
 @Component({
   selector: 'app-error-message',
   templateUrl: './error-message.component.html',
-  styleUrls: ['./error-message.component.scss']
+  styleUrls: ['./error-message.component.scss'],
 })
 export class ErrorMessageComponent implements OnInit {
   @Input() message: string = 'Something went wrong'
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

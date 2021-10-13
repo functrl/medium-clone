@@ -1,17 +1,16 @@
-import {Injectable} from '@angular/core';
-import {createEffect, Actions, ofType} from '@ngrx/effects';
-import {AuthService} from '../../services/auth.service';
-import {catchError, map, switchMap} from 'rxjs/operators';
-import {of} from 'rxjs';
-import {PersistenceService} from '../../../shared/services/persistence.service';
+import {Injectable} from '@angular/core'
+import {createEffect, Actions, ofType} from '@ngrx/effects'
+import {AuthService} from '../../services/auth.service'
+import {catchError, map, switchMap} from 'rxjs/operators'
+import {of} from 'rxjs'
+import {PersistenceService} from '../../../shared/services/persistence.service'
 import {
   getCurrentUserAction,
   getCurrentUserFailureAction,
-  getCurrentUserSuccessAction
-} from '../actions/get-current-user.action';
+  getCurrentUserSuccessAction,
+} from '../actions/get-current-user.action'
 
 @Injectable()
-
 export class GetCurrentUserEffect {
   getCurrentUser$ = createEffect(() =>
     this.actions$.pipe(
@@ -37,6 +36,5 @@ export class GetCurrentUserEffect {
     private actions$: Actions,
     private authService: AuthService,
     private persistenceService: PersistenceService
-  ) {
-  }
+  ) {}
 }

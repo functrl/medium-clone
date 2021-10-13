@@ -1,10 +1,10 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {UtilsService} from '../../../../services/utils.service';
+import {Component, Input, OnInit} from '@angular/core'
+import {UtilsService} from '../../../../services/utils.service'
 
 @Component({
   selector: 'app-pagination',
   templateUrl: './pagination.component.html',
-  styleUrls: ['./pagination.component.scss']
+  styleUrls: ['./pagination.component.scss'],
 })
 export class PaginationComponent implements OnInit {
   @Input() total: number
@@ -15,11 +15,10 @@ export class PaginationComponent implements OnInit {
   pagesCount: number
   pages: number[]
 
-  constructor(private utilsService: UtilsService) { }
+  constructor(private utilsService: UtilsService) {}
 
   ngOnInit(): void {
     this.pagesCount = Math.ceil(this.total / this.limit)
     this.pages = this.utilsService.range(1, this.pagesCount)
   }
-
 }
