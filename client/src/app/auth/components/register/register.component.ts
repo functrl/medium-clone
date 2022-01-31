@@ -9,6 +9,7 @@ import {
 } from '../../store/selectors'
 import {RegisterRequestInterface} from '../../types/registerRequest.interface'
 import {BackendErrorsInterface} from '../../../shared/types/backend-errors.interface'
+import {AppStateInterface} from '../../../shared/types/app-state.interface';
 
 @Component({
   selector: 'app-register',
@@ -20,7 +21,7 @@ export class RegisterComponent implements OnInit {
   isSubmitting$: Observable<boolean>
   backendErrors$: Observable<BackendErrorsInterface | null>
 
-  constructor(private fb: FormBuilder, private store: Store) {}
+  constructor(private fb: FormBuilder, private store: Store<AppStateInterface>) {}
 
   ngOnInit(): void {
     this.initializeForm()

@@ -8,6 +8,7 @@ import {
   isLoadingSelector,
   popularTagsSelector,
 } from '../../store/selectors'
+import {AppStateInterface} from '../../../../types/app-state.interface';
 
 @Component({
   selector: 'app-popular-tags',
@@ -19,7 +20,7 @@ export class PopularTagsComponent implements OnInit {
   isLoading$: Observable<boolean>
   error$: Observable<string | null>
 
-  constructor(private store: Store) {}
+  constructor(private store: Store<AppStateInterface>) {}
 
   ngOnInit(): void {
     this.initializeValues()

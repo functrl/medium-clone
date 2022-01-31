@@ -18,6 +18,7 @@ import {
 import {environment} from '../../../../../../environments/environment'
 import {ActivatedRoute, Router} from '@angular/router'
 import {parseUrl, stringify} from 'query-string'
+import {AppStateInterface} from '../../../../types/app-state.interface';
 
 @Component({
   selector: 'app-feed',
@@ -36,7 +37,7 @@ export class FeedComponent implements OnInit, OnDestroy, OnChanges {
   currentPage: number
 
   constructor(
-    private store: Store,
+    private store: Store<AppStateInterface>,
     private router: Router,
     private rout: ActivatedRoute
   ) {}

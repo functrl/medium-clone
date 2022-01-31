@@ -8,6 +8,7 @@ import {
   validationErrorsSelector,
 } from '../../store/selectors'
 import {createArticleAction} from '../../store/actions/create-article.action'
+import {AppStateInterface} from '../../../shared/types/app-state.interface';
 
 @Component({
   selector: 'app-create-article',
@@ -24,7 +25,7 @@ export class CreateArticleComponent implements OnInit {
   isSubmitting$: Observable<boolean>
   backendErrors$: Observable<BackendErrorsInterface | null>
 
-  constructor(private store: Store) {}
+  constructor(private store: Store<AppStateInterface>) {}
 
   ngOnInit(): void {
     this.isSubmitting$ = this.store.pipe(select(isSubmittingSelector))

@@ -7,6 +7,7 @@ import {
   isAnonymousSelector,
   isLoggedInSelector,
 } from '../../../../../auth/store/selectors'
+import {AppStateInterface} from '../../../../types/app-state.interface';
 
 @Component({
   selector: 'app-top-bar',
@@ -18,7 +19,7 @@ export class TopBarComponent implements OnInit {
   isAnonymous$: Observable<boolean>
   currentUser$: Observable<CurrentUserInterface | null>
 
-  constructor(private store: Store) {}
+  constructor(private store: Store<AppStateInterface>) {}
 
   ngOnInit(): void {
     this.isLoggedIn$ = this.store.pipe(select(isLoggedInSelector))

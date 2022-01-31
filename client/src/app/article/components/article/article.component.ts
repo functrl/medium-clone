@@ -13,6 +13,7 @@ import {currentUserSelector} from '../../../auth/store/selectors'
 import {CurrentUserInterface} from '../../../shared/types/current-user.interface'
 import {map} from 'rxjs/operators'
 import {deleteArticleAction} from '../../store/actions/delete-article.action'
+import {AppStateInterface} from '../../../shared/types/app-state.interface';
 
 @Component({
   selector: 'app-article',
@@ -27,7 +28,7 @@ export class ArticleComponent implements OnInit, OnDestroy {
   error$: Observable<string | null>
   isAuthor$: Observable<boolean>
 
-  constructor(private store: Store, private route: ActivatedRoute) {}
+  constructor(private store: Store<AppStateInterface>, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.initializeValues()
