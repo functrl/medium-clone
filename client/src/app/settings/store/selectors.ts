@@ -3,7 +3,7 @@ import {createSelector} from '@ngrx/store';
 import {SettingsStateInterface} from '../types/settings-state.interface';
 
 export const settingsFeatureSelector =
-  (state: AppStateInterface): SettingsStateInterface => state.auth
+  (state: AppStateInterface): SettingsStateInterface => state.settings
 
 export const isSubmittingSelector = createSelector(
   settingsFeatureSelector,
